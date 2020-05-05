@@ -61,12 +61,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
      @IBAction func pickAnImage(_ sender: Any) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.delegate = self
-            present(imagePicker, animated: true, completion: nil)
-        }
-        
+        //creates the image picker controller
+        let imagePicker = UIImagePickerController()
+        //sets the source type to photo library
+        imagePicker.sourceType = .photoLibrary
+        //adds the delegate
+        imagePicker.delegate = self
+        //presents the image picekr
+        present(imagePicker, animated: true, completion: nil)
+    }
+        //delegate function to dismiss impagepicker when cancel is pressed
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             dismiss(animated: true, completion: nil)
         }
@@ -89,7 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.delegate = self
             present(imagePicker, animated: true, completion: nil)
         }
-    
+    //checks to see if user started editing and if the default text is still there
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == topText && topText.text == "Top" {
             textField.text = ""
@@ -98,7 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             textField.text = ""
         }
     }
-    
+    //when return is pressed the keyboard disappears
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -107,14 +111,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
        return true
     }
-    
-    
+    //edits the view to allow text to be seen while typing
     @objc func keyboardWillShow(_ notification: Notification) {
         if bottomText.isFirstResponder {
             view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
+    //sets the view back in its orginal place
     @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
     }
