@@ -17,16 +17,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="kSN-EH-A3V">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="896" id="2K0-Uw-cPH"/>
-                                    <constraint firstAttribute="width" constant="414" id="G3K-WT-Z0Y"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kSN-EH-A3V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="64o-OD-JkJ"/>
-                            <constraint firstItem="kSN-EH-A3V" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="d1C-D7-Na0"/>
+                            <constraint firstItem="kSN-EH-A3V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Zb-0R-3iG"/>
+                            <constraint firstItem="kSN-EH-A3V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4xh-iR-P7F"/>
+                            <constraint firstItem="kSN-EH-A3V" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="DQj-X4-IF3"/>
+                            <constraint firstAttribute="bottom" secondItem="kSN-EH-A3V" secondAttribute="bottom" id="lZ6-nF-Gyp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
