@@ -30,8 +30,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = false
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
     
     //Check if device has a camera
     func enableCameraButton(_ button: UIBarButtonItem) {
