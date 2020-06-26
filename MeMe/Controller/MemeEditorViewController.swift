@@ -29,6 +29,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         memeTextFieldSetUp(topText, "Top")
         memeTextFieldSetUp(bottomText, "Bottom")
         shareButton.isEnabled = false
+        navigationController?.isNavigationBarHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +39,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -149,12 +151,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    func save() {
+    func save(_ memedImage: UIImage) {
         //Create the meme
-        let image = generateMemedImage()
+        let image = memedImage
         // save the meme image in a meme struct
         let meme = MeMe(topText: topText.text!, bottomText: bottomText.text!, image: self.image.image!, meme: image)
         //Meme object can be saved to an array, core data
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -184,12 +189,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         controller.completionWithItemsHandler = { (type, completed, items, error) in
             //if controller was completed successfully, the save() is called
             if completed {
-                self.save()
+                self.save(meme)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         present(controller, animated: true, completion: nil)
     }
     
+    
+    
+    @IBAction func cancelButtonAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     
