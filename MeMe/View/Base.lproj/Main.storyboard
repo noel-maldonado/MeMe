@@ -30,7 +30,7 @@
         <scene sceneID="Fae-31-7BJ">
             <objects>
                 <navigationController id="X8t-uU-g2Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="circle.grid.3x3.fill" catalog="system" id="3YE-lS-rBK"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" id="3YE-lS-rBK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z2R-ar-6t5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,7 +137,7 @@
         <scene sceneID="h1x-gK-KpS">
             <objects>
                 <navigationController id="XnE-n6-nMU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="kfl-A0-ySX"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" id="kfl-A0-ySX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PTt-zc-RRe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -508,9 +508,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
-        <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="collection_30x30" width="30" height="30"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="table_30x30" width="30" height="30"/>
     </resources>
 </document>
